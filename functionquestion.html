@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 question</title>
+</head>
+<body>
+    <script>
+        //1: write a function identify that takes an argument and returns a function that returns that argument?
+            function identify(argument){
+                return function(){
+                    return argument;
+                }
+            };
+           var a = identify("let's learn javascript");
+           console.log(a());
+
+
+        //2 :write three binary function add, sub and mul that take two numbers and return their sum, difference and product?
+           function add(a,b){
+                
+               console.log(a+b)
+           }
+
+           function sub(a,b){
+            
+               console.log(a-b)
+           }
+
+           function pro(a,b){
+            
+               console.log(a*b)
+           }
+           add(4,2);
+           sub(1,2);
+           pro(1,2);
+
+
+        //3 :write a function addf that  adds from two invocation?
+        function addf(a) {
+        return function(b) {
+            console.log(a + b) ;
+        }
+        }
+        addf(3)(4)
+
+
+         //4 :Write a function liftf that takes a binary function, and makes it callable with two invocations.
+         function liftf(){
+             return function(a){
+              console.log(a)
+             }
+             return function(b){
+                console.log(b)
+             
+             }
+             
+         }
+         liftf(1)(2);
+
+       
+
+        //5 :Write a function curry that takes a binary function and an agrument, and returns a function that can take a second argument.
+       function curry(binary,x){
+           return function (y){
+               return binary(x, y);
+           }
+       }
+       let g = curry();
+       console.log(g)
+        
+
+
+    //6 :Without writing any new funcitons, show three ways to create the inc function (adds 1 to a number and returns it)?
+
+      var inc = addf(1)(1);
+      var inc = liftf(1)(1);
+      var inc = curry(1)
+       
+    //7 :Write a function twice that takes a binary function and returns a unary function that passes its argument to the binary function twice?
+     
+    function twice(binary) {
+    return function(x) {
+        return binary(y, x)
+    }
+    }
+
+    //8 :Write reverse, a function that reverses the arguments of a binary function?
+    function reverse(binary) {
+    return function (x, y) {
+        return binary(y, x);
+    }
+    }
+   //9 :Write a function composeu that takes two unary functions and returns a unary function that calls them both?
+    function composeu(fun1,fun2){
+        return function(y){
+    
+        }
+        console.log(fun1(fun(1)))    
+    }
+    composeu();
+    //10 :Write a function composeb that takes two binary functions and returns a function that calles them both?
+        
+    function composeb(binary1 ,binary2){
+        return function(a,b){
+
+        }
+        console.log (binary2(binary1(1,2)));
+    }
+    composeu()
+
+    </script>
+</body>
+</html>
